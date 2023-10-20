@@ -26,7 +26,7 @@ func main() {
 		},
 	}
 	params := map[string]interface{}{
-		"port": 9999,
+		"port": 9998,
 		"image":    "image-yyyyy",
 		"imagePullPolicy":     "IfNotPresent",
 		"cpu": "500",
