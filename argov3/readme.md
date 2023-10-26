@@ -25,7 +25,7 @@ cue get go github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1
 
 ## 二、依赖argo导入测试Demo
 `template.cue`是一个通用的模板，直接引用argo workflow的定义。
-但也有**缺点**，就是将全量参数暴露给用户，增加了配置的复杂度。
+但也有**缺点**，就是将全量参数暴露给用户，增加了配置的复杂度。   
 cue文件测试命令：
 `cue eval data.cue template.cue -e argo_template.edsn_contents --out yaml`
 
