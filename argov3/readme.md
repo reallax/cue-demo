@@ -1,3 +1,4 @@
+## 一、引入argo workflow包
 ### 1. 创建工作目录
 ```
 mkdir argov3
@@ -22,5 +23,18 @@ cue get go github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1
 - cue get：将go lib中的的struct生成Definition
 - cue文件生成路径：argov3/cue.mod/gen/github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1/
 
-### 5. cue文件测试
-`cue eval {data.cue} {tmpl.cue} -e {wf_container}.edsn_contents --out yaml`
+## 二、依赖argo导入测试Demo
+`template.cue`是一个通用的模板，直接引用argo workflow的定义。
+但也有**缺点**，就是将全量参数暴露给用户，增加了配置的复杂度。
+cue文件测试命令：
+`cue eval data.cue template.cue -e argo_template.edsn_contents --out yaml`
+
+## 三、基于通用模板选择性暴露参数
+* 构建tmpl_container.cue，引入基础模板template.cue#edsn_contents
+* 在tmpl_container.cue中定义希望暴露给用户的参数，并定义template.cue#edsn_inputs，其值来源于tmpl_container.cue#edsn_inputs
+* 构建tmpl_container_data.cue，传入tmpl_container.cue#edsn_inputs参数值。
+cue文件测试命令：
+```
+cue eval tmpl_container.cue tmpl_container_data.cue template.cue -e argo_template_container.edsn_contents --out yaml
+```
+*注意*：多文件渲染，多文件需要有共同的package名称。如：package argo
