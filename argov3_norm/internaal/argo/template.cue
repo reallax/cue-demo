@@ -5,7 +5,7 @@ import (
 	apiv1 "k8s.io/api/core/v1"
 )
 
-argo_template: {
+edsn_argo_template: {
 	edsn_inputs: {
 		name?:    string
 		inputs?:  argo.#Inputs
