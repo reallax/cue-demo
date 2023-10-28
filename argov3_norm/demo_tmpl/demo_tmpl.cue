@@ -22,10 +22,7 @@ demo_tmpl: {
         args: [...string]
         resources: #Resources
     }
-    edsn_contents: {
-        abc: "sdf"
-        argo.edsn_argo_template.edsn_contents
-    }
+    edsn_contents: argo.edsn_argo_template.edsn_contents
 }
 
 

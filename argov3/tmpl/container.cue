@@ -7,6 +7,7 @@ import (
 
 tmpl_container: {
     edsn_inputs: {
+        name: string
         image: string
         command: [...string]
         args: [...string]
