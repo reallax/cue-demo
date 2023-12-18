@@ -4,12 +4,15 @@ go 1.21.0
 
 require (
 	cuelang.org/go v0.6.0
+	github.com/casbin/casbin/v2 v2.79.0
 	github.com/confluentinc/confluent-kafka-go v1.9.2
 	github.com/kubevela/workflow v0.6.0
+	google.golang.org/protobuf v1.31.0
 	k8s.io/apimachinery v0.28.2
 )
 
 require (
+	github.com/casbin/govaluate v1.1.0 // indirect
 	github.com/cockroachdb/apd/v3 v3.2.0 // indirect
 	github.com/cue-exp/kubevelafix v0.0.0-20220922150317-aead819d979d // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -33,7 +36,6 @@ require (
 	golang.org/x/time v0.3.0 // indirect
 	golang.org/x/tools v0.11.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
